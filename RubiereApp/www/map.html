@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        #map { height: 100vh; width: 100vw; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([17.313927, -88.396264], 8); // Set initial coordinates and zoom level
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Function to handle getting user location
+        function getUserLocation() {
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    var userLat = position.coords.latitude;
+                    var userLng = position.coords.longitude;
+
+                    // Center map on user's location
+                    map.setView([userLat, userLng], 13);
+
+                    // Add a marker for the user's location
+                    L.marker([userLat, userLng]).addTo(map)
+                        .bindPopup('Your Location').openPopup();
+                },
+                function(error) {
+                    console.error('Error getting location:', error);
+                }
+            );
+        }
+
+        // Call the function to get user's location
+        getUserLocation();
+    </script>
+</body>
+</html>
