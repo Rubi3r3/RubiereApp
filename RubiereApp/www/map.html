@@ -25,11 +25,11 @@
                     var userLng = position.coords.longitude;
 
                     // Center map on user's location
-                    map.setView([userLat, userLng], 13);
+                    map.setView([userLat, userLng], 8);
 
                     // Add a marker for the user's location
                     L.marker([userLat, userLng]).addTo(map)
-                        .bindPopup('Your Location').openPopup();
+                        .bindPopup('<b>Your are here!</b>').openPopup();
                 },
                 function(error) {
                     console.error('Error getting location:', error);

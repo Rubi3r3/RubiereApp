@@ -8,13 +8,21 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    
+    <!--Icons-->
+    <platform name="android">
+        <icon src = "res/screen/android/splash.png"/>
+    </platform>
 
-    <icon src = "res/splash.png"/>
+    <!-- Preferences -->
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" /> <!-- Set the delay in milliseconds -->
     <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="FadeSplashScreen" value="true" />
 
 <platform name="android">
-    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/android/splash/splashscreen.xml" />
-    <preference name="AndroidWindowSplashScreenBackground" value="#FFFFFF" />
+    <!-- Remove <splash> tags -->
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splash-lpi.png" />
+    <!-- Replace the value with the path to your animated icon -->
 </platform>
-
 </widget>
