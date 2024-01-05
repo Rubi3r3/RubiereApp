@@ -8,4 +8,13 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+
+    <icon src = "res/splash.png"/>
+    <preference name="AutoHideSplashScreen" value="true" />
+
+<platform name="android">
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/android/splash/splashscreen.xml" />
+    <preference name="AndroidWindowSplashScreenBackground" value="#FFFFFF" />
+</platform>
+
 </widget>
